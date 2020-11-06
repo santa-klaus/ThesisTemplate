@@ -1,37 +1,50 @@
 
 %==============================================================
-% DEFAULT PACKAGES (add your own packages at the end...)
+% BASIC PACKAGES FOR TEMPLATE (add your own packages in YourThesis/Packages.tex)
+%==============================================================
+
+%==============================================================
+% Encodings and system internals
+%==============================================================
+
+\usepackage[T1]{fontenc} % font enconding
+\usepackage[utf8]{inputenc} % input encoding
+
+
+%==============================================================
+% Language support
+%==============================================================
+
+\usepackage[swedish,english]{babel}	% babel - multilanguage support, load with english as primary language (last option)
+
+
+
+%==============================================================
+% Layout
+%==============================================================
+
+\usepackage[paperwidth=16.9cm,paperheight=23.9cm]{geometry} % used in cover page
+\usepackage{scrlayer-scrpage}
+\usepackage{scrhack}
+\usepackage{lmodern} % higher quality font than LaTeX's standard computer modern
+\usepackage[babel,english=american]{csquotes}
+\usepackage[hang,small]{caption} % hang: indent captions. small: smaller text.
+\usepackage[Sonny]{fncychap}
+
+
+
+%==============================================================
+% Graphics
 %==============================================================
 
 \usepackage{wrapfig} % used in cover page
 \usepackage{tikz} % used in cover page
-\usepackage{lmodern}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english]{babel}	
-\usepackage[babel,english=american]{csquotes}
-\usepackage{scrlayer-scrpage}
-\usepackage{scrhack}
-\usepackage[hang,small]{caption} % hang: indent captions. small: smaller text.
-\usepackage[]{datetime}
-\usepackage{amsthm,mathtools}
-\usepackage[]{appendix}
-\usepackage[Sonny]{fncychap}
-\usepackage{bm}
-%\usepackage[framemethod=default]{mdframed}
-\usepackage{array}
-\usepackage{longtable}
-\usepackage{booktabs}	% tables / merge two columns / multicolumn
-\usepackage{color}	
-\usepackage{graphicx}
-\usepackage{xspace} % for the ``space after newcommand'' problem
-\usepackage{letltxmacro}
-\usepackage{etoolbox}
-
-\definecolor{LinkColor}{rgb}{0,0,0.5}
 
 
-% Bibliography management
+%==============================================================
+% Bibliography Management
+%==============================================================
+
 \usepackage[natbib=true,
 			style=ieee,
             mincitenames=1,
@@ -39,8 +52,26 @@
             url=false,
             eprint=false,
             doi=false]{biblatex}
-\usepackage{silence}\WarningFilter{biblatex}{File 'english-ieee.lbx'} % this hides an unimportant warning that will be removed in v1.3a (2019-06-19) of biblatex-ieee
+ 
 
+
+%==============================================================
+% Links / Hyperref
+%==============================================================
+
+% Hyperref is loaded in Template.tex after the author info has been loaded.
+
+
+
+
+%==============================================================
+% Configurations
+%==============================================================
+
+\definecolor{LinkColor}{rgb}{0,0,0.5} % Link color for links with hyperref. 
+% Select colorlinks=true in Template.tex where hyperref is loaded to activate colored links.
+
+% Configure headings for the bibliography sections.            
 \defbibheading{secbib}[\bibname]{%
   \section*{#1}%
   \addcontentsline{toc}{section}{\bibname}
